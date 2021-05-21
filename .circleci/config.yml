@@ -1,0 +1,19 @@
+version: 2
+orbs:
+  ruby: circleci/ruby@0.1.2
+
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.7.2-node-browsers
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: bundle install --jobs=4 --retry=3
+      - run:
+          name: Run tests
+          command: RUBYOPT='-W:no-deprecated -W:no-experimental' bundle exec rspec --format progress
+      - run:
+          name: Run rubocop
+          command: RUBYOPT='-W:no-deprecated -W:no-experimental' bundle exec rubocop
