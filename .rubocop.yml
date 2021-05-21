@@ -1,0 +1,27 @@
+require:
+  - rubocop-rspec
+  - rubocop/rspec/focused
+
+AllCops:
+  TargetRubyVersion: 2.7.2
+
+Style/Documentation:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 100
+
+Metrics/MethodLength:
+  Max: 10
+
+RSpec/Focused:
+  Enabled: true
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+  
+Style/HashTransformValues:
+  Enabled: true
