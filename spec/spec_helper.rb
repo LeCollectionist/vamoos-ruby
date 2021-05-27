@@ -2,6 +2,8 @@
 
 require 'bundler/setup'
 require 'vamoos'
+require 'webmock/rspec'
+Dir['./spec/support/**/*.rb'].sort.each { |file| require file }
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -13,4 +15,10 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+
+  config.before do
+    stub_request(:any, /live.vamoos.com/).to_rack(FakeVamoos)
+  end
+
+  config.include Helpers::Authentication, type: :feature
 end

@@ -30,11 +30,13 @@ Gem::Specification.new do |s|
   s.executables   = s.files.grep(%r{^exe/}) { |f| File.basename(f) }
   s.require_paths = ['lib']
 
-  s.add_dependency('httparty', '~> 0.18.0')
-  s.add_development_dependency 'bundler', '>= 2.0', '< 3.0'
-  s.add_development_dependency 'rake', '~> 12.0'
-  s.add_development_dependency 'rspec', '~> 3.0'
-  s.add_development_dependency 'rubocop', '~> 0.80'
-  s.add_development_dependency 'rubocop-rspec', '~> 1.38'
-  s.add_development_dependency 'rubocop-rspec-focused', '~> 1'
+  s.add_dependency('httparty', '~> 0.18.1')
+  s.add_development_dependency('bundler', '>= 2.0', '< 3.0')
+  s.add_development_dependency('rake', '~> 12.0')
+  s.add_development_dependency('rspec', '~> 3.0')
+  s.add_development_dependency('rubocop', '~> 0.80')
+  s.add_development_dependency('rubocop-rspec', '~> 1.38')
+  s.add_development_dependency('rubocop-rspec-focused', '~> 1')
+  s.add_development_dependency('sinatra', '~> 1.4')
+  s.add_development_dependency('webmock', '~> 3.8')
 end
