@@ -22,7 +22,12 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+Vamoos.configure do |config|
+  config.token = 'YOUR_TOKEN_HERE'
+  config.operator_code = 'YOUR_OPERATOR_CODE_HERE'
+end
+```
 
 ## Development
 
