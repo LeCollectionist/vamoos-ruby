@@ -14,13 +14,13 @@ module Vamoos
       def create!(params)
         result = post_json('/poi', { body: params.to_json })
 
-        Vamoos::PointOfInterest.new(result.parsed_response)
+        new(result.parsed_response)
       end
 
       def update!(poi_id, params)
         result = put_json("/poi/#{poi_id}", { body: params.to_json })
 
-        Vamoos::PointOfInterest.new(result.parsed_response)
+        new(result.parsed_response)
       end
     end
   end
