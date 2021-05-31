@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require_relative 'vamoos/errors'
 require_relative 'vamoos/api'
 require_relative 'vamoos/itinerary'
 require_relative 'vamoos/point_of_interest'
