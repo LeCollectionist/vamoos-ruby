@@ -2,8 +2,9 @@
 
 module Vamoos
   class PointOfInterest < Api
-    attr_accessor :id, :country, :country_iso, :created_at, :description, :icon, :icon_id,
-                  :is_default_on, :latitude, :longitude, :meta, :name, :operator_id, :poi_range,
+    attr_accessor :country, :country_iso, :created_at, :created_by, :description, :icon, :icon_id,
+                  :id, :is_default_on, :is_on, :itinerary_id, :latitude, :library_node, :location,
+                  :longitude, :meta, :name, :operator_id, :poi_range, :position, :timezone,
                   :updated_at
 
     def initialize(params)
