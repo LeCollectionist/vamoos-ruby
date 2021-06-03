@@ -18,7 +18,7 @@ module Vamoos
       end
 
       def update!(poi_id, params)
-        result = put_json("/poi/#{poi_id}", { body: params.to_json })
+        result = post_json("/poi/#{poi_id}", { body: params.to_json })
 
         new(result.parsed_response)
       end

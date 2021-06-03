@@ -19,6 +19,8 @@ module Vamoos
 
     class NotFoundError < VamoosError; end
 
+    class MethodNotAllowedError < VamoosError; end
+
     class InternalError < VamoosError; end
 
     class UnavailableError < VamoosError; end

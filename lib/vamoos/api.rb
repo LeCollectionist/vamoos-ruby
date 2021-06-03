@@ -52,6 +52,8 @@ module Vamoos
           raise Vamoos::Errors::AccessDeniedError.new(data), error
         when 404
           raise Vamoos::Errors::NotFoundError.new(data), error
+        when 405
+          raise Vamoos::Errors::MethodNotAllowedError.new(data), error
         when 500
           raise Vamoos::Errors::InternalError.new(data), error
         when 502..503

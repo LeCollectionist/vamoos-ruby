@@ -36,6 +36,7 @@ RSpec.describe Vamoos::Api do
       401 => Vamoos::Errors::UnauthorizedError,
       403 => Vamoos::Errors::AccessDeniedError,
       404 => Vamoos::Errors::NotFoundError,
+      405 => Vamoos::Errors::MethodNotAllowedError,
       500 => Vamoos::Errors::InternalError,
       502 => Vamoos::Errors::UnavailableError,
       503 => Vamoos::Errors::UnavailableError
