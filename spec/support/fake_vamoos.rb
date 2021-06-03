@@ -11,7 +11,7 @@ class FakeVamoos < Sinatra::Base
     json_response 200, 'point_of_interest.json'
   end
 
-  put '/v3/poi/:id' do
+  post '/v3/poi/:id' do
     json_response 200, 'point_of_interest.json'
   end
 
