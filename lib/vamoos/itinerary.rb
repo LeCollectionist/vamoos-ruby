@@ -16,7 +16,7 @@ module Vamoos
     end
 
     class << self
-      def create!(reference_code, params)
+      def create_or_update!(reference_code, params)
         result = post_json("/itinerary/%<operator_code>s/#{reference_code}",
                            { body: params.to_json })
 
