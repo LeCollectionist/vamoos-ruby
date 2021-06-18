@@ -30,3 +30,9 @@ Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
     - 'vamoos.gemspec'
+RSpec/FilePath:
+  Exclude:
+    - 'spec/lib/core_ext/**/*'
+RSpec/NestedGroups:
+  Exclude:
+    - 'spec/**/*'

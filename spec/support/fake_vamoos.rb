@@ -7,6 +7,10 @@ class FakeVamoos < Sinatra::Base
     json_response 200, 'itinerary.json'
   end
 
+  get '/v3/itinerary/:operator_code/:reference_code' do
+    json_response 200, 'itinerary.json'
+  end
+
   post '/v3/poi' do
     json_response 200, 'point_of_interest.json'
   end
