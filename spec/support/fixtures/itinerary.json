@@ -232,7 +232,23 @@
       "meta": {}
     }
   ],
-  "inspiration": 0,
+  "inspiration": {
+      "id": 0,
+      "operator_id": 0,
+      "operator_code": "string",
+      "reference_code": "string",
+      "vamoos_id": 0,
+      "name": "string",
+      "contact_email": "string",
+      "contact_phone": "string",
+      "notification_text": "string",
+      "data": {
+          "rows": []
+      },
+      "meta": {},
+      "created_at": "2019-08-24T14:15:22Z",
+      "updated_at": "2019-08-24T14:15:22Z"
+  },
   "notifications": [
     {
       "id": 0,

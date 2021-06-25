@@ -5,6 +5,8 @@ require 'httparty'
 module Vamoos
   class Api
     include ::HTTParty
+    include Helpers
+
     VAMOOS_API_URI = 'https://live.vamoos.com/v3'
 
     class << self

@@ -7,19 +7,19 @@ module Vamoos
                   :longitude, :meta, :name, :operator_id, :poi_range, :position, :timezone,
                   :updated_at
 
-    def initialize(params)
-      params.each { |key, value| send "#{key}=", value }
+    def initialize(attrs)
+      attrs.each { |key, value| send "#{key}=", value }
     end
 
     class << self
-      def create!(params)
-        result = post_json('/poi', { body: params.to_json })
+      def create!(attrs)
+        result = post_json('/poi', { body: attrs.to_json })
 
         new(result.parsed_response)
       end
 
-      def update!(poi_id, params)
-        result = post_json("/poi/#{poi_id}", { body: params.to_json })
+      def update!(poi_id, attrs)
+        result = post_json("/poi/#{poi_id}", { body: attrs.to_json })
 
         new(result.parsed_response)
       end

@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+require 'active_support/core_ext/hash'
+require_relative 'core_ext'
+require_relative 'vamoos/helpers'
 require_relative 'vamoos/errors'
 require_relative 'vamoos/api'
 require_relative 'vamoos/itinerary'
