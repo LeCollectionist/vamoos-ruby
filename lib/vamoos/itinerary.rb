@@ -12,8 +12,8 @@ module Vamoos
                   :inspiration, :is_active, :is_current_version, :is_listed, :is_public, :is_wiped,
                   :lead_traveller, :locations, :logo, :meta, :notifications, :operator_code,
                   :operator_id, :operator_name, :original_created_at, :passcode_groups, :pois,
-                  :reference_code, :requested_listing_status, :return_date, :source, :start_time,
-                  :timezone, :travellers, :type, :updated_at, :vamoos_id, :version
+                  :reference_code, :requested_listing_status, :return_date, :routing, :source,
+                  :start_time, :timezone, :travellers, :type, :updated_at, :vamoos_id, :version
 
     def initialize(attrs)
       assign_attributes(attrs)
@@ -51,6 +51,7 @@ module Vamoos
 
     private
 
+    # rubocop:disable Merics/MethodLength
     def updatable_attributes
       { details: details_attributes,
         directories: directories_attributes,
@@ -61,7 +62,9 @@ module Vamoos
         notifications: notifications_attributes,
         passcode_groups: passcode_groups_attributes,
         pois: pois_attributes,
+        routings: routings_attributes,
         travellers: travellers_attributes }.merge(base_attributes)
     end
+    # rubocop:enable Merics/MethodLength
   end
 end
