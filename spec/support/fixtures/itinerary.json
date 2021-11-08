@@ -813,5 +813,16 @@
     "hotel_info_label": "string",
     "hotel_info_icon_id": "string",
     "check_in_time": "string"
+  },
+  "routing": {
+      "master": "/itinerary/myop/myref/languages/en",
+      "fallback": "/itinerary/myop/myref/languages/en",
+      "this": "/itinerary/myop/myref/languages/fr",
+      "language": {
+          "en": "/itinerary/myop/myref/languages/en",
+          "fr": "/itinerary/myop/myref/languages/fr",
+          "ja": "/itinerary/myop/myref/languages/ja"
+      }
+
   }
 }

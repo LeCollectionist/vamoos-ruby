@@ -10,6 +10,7 @@ require_relative 'attributes/metas'
 require_relative 'attributes/notifications'
 require_relative 'attributes/passcode_groups'
 require_relative 'attributes/pois'
+require_relative 'attributes/routings'
 require_relative 'attributes/travellers'
 
 module Vamoos
@@ -25,6 +26,7 @@ module Vamoos
       include Notifications
       include PasscodeGroups
       include Pois
+      include Routings
       include Travellers
     end
   end
