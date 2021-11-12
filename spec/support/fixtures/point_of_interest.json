@@ -59,5 +59,9 @@
   "is_default_on": true,
   "is_on": true,
   "poi_range": 0,
-  "meta": {}
+  "meta": {},
+  "localisation": {
+    "da": {},
+    "es": {}
+  }
 }

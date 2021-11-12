@@ -25,8 +25,9 @@ RSpec.describe Vamoos::Helpers::Attributes do
 
     context 'with incorrect attributes' do
       it do
-        expect { itinerary.assign_attributes({ key: :another_value }) }.to\
-          raise_error(NoMethodError)
+        itinerary.assign_attributes({ key: :another_value })
+
+        expect(itinerary.properties).to eq({ key: :another_value })
       end
     end
   end

@@ -7,6 +7,8 @@ module Vamoos
     include ::HTTParty
     include Helpers
 
+    attr_accessor :properties
+
     VAMOOS_API_URI = 'https://live.vamoos.com/v3'
 
     class << self
