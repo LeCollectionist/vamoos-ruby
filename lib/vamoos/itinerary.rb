@@ -51,7 +51,6 @@ module Vamoos
 
     private
 
-    # rubocop:disable Merics/MethodLength
     def updatable_attributes
       { details: details_attributes,
         directories: directories_attributes,
@@ -62,9 +61,7 @@ module Vamoos
         notifications: notifications_attributes,
         passcode_groups: passcode_groups_attributes,
         pois: pois_attributes,
-        routings: routings_attributes,
         travellers: travellers_attributes }.merge(base_attributes)
     end
-    # rubocop:enable Merics/MethodLength
   end
 end
