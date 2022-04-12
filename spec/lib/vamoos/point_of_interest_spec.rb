@@ -5,7 +5,7 @@ RSpec.describe Vamoos::PointOfInterest do
 
   describe '#create!' do
     it 'returns Vamoos Poi' do
-      poi = described_class.create!({ key: 'value' })
+      poi = described_class.create!('12345', { key: 'value' })
 
       expect(poi.id).to\
         be_an_instance_of(Integer)
@@ -14,7 +14,7 @@ RSpec.describe Vamoos::PointOfInterest do
 
   describe '#update!' do
     it 'returns Vamoos Poi' do
-      poi = described_class.update!(5_827_354, { key: 'value' })
+      poi = described_class.update!('12345', 5_827_354, { key: 'value' })
 
       expect(poi.id).to\
         be_an_instance_of(Integer)

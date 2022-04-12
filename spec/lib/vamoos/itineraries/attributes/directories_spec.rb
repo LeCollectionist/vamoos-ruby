@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe Vamoos::Itineraries::Attributes::Directories do
-  let(:itinerary) { Vamoos::Itinerary.find!(1) }
+  let(:itinerary) { Vamoos::Itinerary.find!('operator_code', 1) }
   let(:attributes) do
     [{
       type: 'directory',
@@ -24,7 +24,6 @@ RSpec.describe Vamoos::Itineraries::Attributes::Directories do
         sunday: false
       },
       actions: [{ icon_id: 0, name: 'string', web_url: 'string' }],
-      # Voir comment faire la creation recursive ici...
       children: [{}]
     }]
   end

@@ -10,7 +10,7 @@ require_relative 'vamoos/point_of_interest'
 
 module Vamoos
   class << self
-    attr_accessor :token, :operator_code
+    attr_accessor :token
 
     def configure
       yield self

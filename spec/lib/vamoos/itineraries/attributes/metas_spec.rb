@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe Vamoos::Itineraries::Attributes::Metas do
-  let(:itinerary) { Vamoos::Itinerary.find!(1) }
+  let(:itinerary) { Vamoos::Itinerary.find!('operator_code', 1) }
   let(:attributes) do
     {
       show_journal: '0',
