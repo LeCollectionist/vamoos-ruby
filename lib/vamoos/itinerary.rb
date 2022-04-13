@@ -20,15 +20,15 @@ module Vamoos
     end
 
     class << self
-      def create!(reference_code, attrs)
-        result = post_json("/itinerary/%<operator_code>s/#{reference_code}",
+      def create!(operator_code, reference_code, attrs)
+        result = post_json(operator_code, "/itinerary/#{operator_code}/#{reference_code}",
                            { body: attrs.to_json })
 
         new(result.parsed_response)
       end
 
-      def find!(reference_code)
-        result = get_json("/itinerary/%<operator_code>s/#{reference_code}")
+      def find!(operator_code, reference_code)
+        result = get_json(operator_code, "/itinerary/#{operator_code}/#{reference_code}")
 
         new(result.parsed_response)
       end
@@ -36,16 +36,20 @@ module Vamoos
 
     def update!(attrs)
       attrs = updatable_attributes.deep_symbolize_keys.deep_merge(attrs).deep_blank_compact
-      result = Vamoos::Itinerary.post_json("/itinerary/%<operator_code>s/#{reference_code}",
-                                           { body: attrs.to_json })
+      result = Vamoos::Itinerary.post_json(
+        operator_code, "/itinerary/#{operator_code}/#{reference_code}",
+        { body: attrs.to_json }
+      )
 
       assign_attributes(result.parsed_response)
     end
 
     def save!
       attrs = updatable_attributes.deep_symbolize_keys.deep_blank_compact
-      result = Vamoos::Itinerary.post_json("/itinerary/%<operator_code>s/#{reference_code}",
-                                           { body: attrs.to_json })
+      result = Vamoos::Itinerary.post_json(
+        operator_code, "/itinerary/#{operator_code}/#{reference_code}",
+        { body: attrs.to_json }
+      )
       assign_attributes(result.parsed_response)
     end
 

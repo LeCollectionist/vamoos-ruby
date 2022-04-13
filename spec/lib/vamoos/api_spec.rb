@@ -3,6 +3,7 @@
 RSpec.describe Vamoos::Api do
   let(:response) { instance_double('HTTParty::Response') }
   let(:path) { '/some/path' }
+  let(:operator_code) { 'operator_code' }
 
   %w[get post put delete].each do |method|
     describe "##{method}_json" do
@@ -14,7 +15,7 @@ RSpec.describe Vamoos::Api do
                                                       {
                                                         headers: {
                                                           'content-type' => 'application/json',
-                                                          'x-operator-code' => 'operator_code',
+                                                          'x-operator-code' => operator_code,
                                                           'x-user-access-token' => 'token'
                                                         }
                                                       }).and_return(response)
@@ -23,7 +24,7 @@ RSpec.describe Vamoos::Api do
       end
 
       it 'returns the parsed response from the request' do
-        result = described_class.public_send("#{method}_json", path)
+        result = described_class.public_send("#{method}_json", operator_code, path)
 
         expect(result).to eq(response)
       end
@@ -52,7 +53,7 @@ RSpec.describe Vamoos::Api do
                                                         {
                                                           headers: {
                                                             'content-type' => 'application/json',
-                                                            'x-operator-code' => 'operator_code',
+                                                            'x-operator-code' => operator_code,
                                                             'x-user-access-token' => 'token'
                                                           }
                                                         }).and_return(response)
@@ -64,7 +65,8 @@ RSpec.describe Vamoos::Api do
         end
 
         it "raise #{error}" do
-          expect { described_class.public_send(:get_json, path) }.to raise_error(error)
+          expect { described_class.public_send(:get_json, operator_code, path) }
+            .to raise_error(error)
         end
       end
     end

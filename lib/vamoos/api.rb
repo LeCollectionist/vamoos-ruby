@@ -13,12 +13,10 @@ module Vamoos
 
     class << self
       %w[get post put delete].each do |method|
-        define_method "#{method}_json" do |path, options = {}|
+        define_method "#{method}_json" do |operator_code, path, options = {}|
           options[:headers] ||= {}
-          options[:headers].merge!(authorization_header)
+          options[:headers].merge!(authorization_header(operator_code))
           options[:headers].merge!(content_type_header)
-
-          path = Kernel.format(path, operator_code: Vamoos.operator_code)
 
           response = send(method, VAMOOS_API_URI + path, options)
           raise_errors(response) unless response.success?
@@ -29,13 +27,13 @@ module Vamoos
 
       private
 
-      def authorization_header
-        if Vamoos.token.nil? || Vamoos.operator_code.nil?
+      def authorization_header(operator_code)
+        if Vamoos.token.nil?
           raise Vamoos::Errors::MissingCredentialsError,
-                'Please provide Vamoos user access token and operator code'
+                'Please provide Vamoos user access token'
         end
 
-        { 'x-user-access-token' => Vamoos.token, 'x-operator-code' => Vamoos.operator_code }
+        { 'x-user-access-token' => Vamoos.token, 'x-operator-code' => operator_code }
       end
 
       def content_type_header

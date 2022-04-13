@@ -2,10 +2,9 @@
 
 module Helpers
   module Authentication
-    def self.configure_authentication(token: 'token', operator_code: 'operator_code')
+    def self.configure_authentication(token: 'token')
       Vamoos.configure do |config|
         config.token = token
-        config.operator_code = operator_code
       end
     end
   end
