@@ -31,7 +31,7 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
 
   s.add_dependency('activesupport', '7.0.8')
-  s.add_dependency('httparty', '~> 0.18.1')
+  s.add_dependency('httparty', '0.21.0')
   s.add_development_dependency('bundler', '>= 2.0', '< 3.0')
   s.add_development_dependency('rake', '~> 12.0')
   s.add_development_dependency('rspec', '~> 3.0')
